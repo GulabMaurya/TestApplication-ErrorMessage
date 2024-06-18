@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "lq14O9aCaQHTpgs4xMItvz69Ih9DQFDPsJTxFoJZutE=",
+  "Source": "AppPool_WebAPI",
+  "BasePath": "_content/AppPool_WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

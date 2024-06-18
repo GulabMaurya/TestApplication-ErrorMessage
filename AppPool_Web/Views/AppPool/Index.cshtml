@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AppPool_Web.Models.AppPool>
+@{
+    ViewBag.Title = "App Pools";
+}
+
+<h2>Application Pools</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appPool in Model)
+        {
+            <tr>
+                <td>@appPool.Name</td>
+                <td>@appPool.Status</td>
+                <td>
+                    <form action="@Url.Action("Recycle", "AppPool")" method="post" style="display:inline;">
+                        <input type="hidden" name="name" value="@appPool.Name" />
+                        <button type="submit" class="btn btn-warning">Recycle</button>
+                    </form>
+                    <form action="@Url.Action("Start", "AppPool")" method="post" style="display:inline;">
+                        <input type="hidden" name="name" value="@appPool.Name" />
+                        <button type="submit" class="btn btn-success">Start</button>
+                    </form>
+                    <form action="@Url.Action("Stop", "AppPool")" method="post" style="display:inline;">
+                        <input type="hidden" name="name" value="@appPool.Name" />
+                        <button type="submit" class="btn btn-danger">Stop</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
